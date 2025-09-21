@@ -6,8 +6,7 @@ import base64, os
 st.set_page_config(page_title="FOO", page_icon='🏗', layout="wide")
 
 # ==== مفتاح OpenAI ====
-#API_KEY = ("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") or "sk-..."  # أو ضع مفتاحك مؤقتًا هنا
-#client = OpenAI(api_key=API_KEY)
+
 api_key = st.secrets["OPENAI_API_KEY"]
 client = OpenAI(api_key=api_key)
 
@@ -70,4 +69,5 @@ if user_msg:
                     st.error(f"تعذّر الحصول على رد: {e}")
 
 st.caption("⚠️ ملاحظة: قراءة التفاصيل من الصور قد تكون محدودة؛ النتائج تقديرية وليست عرض سعر ملزم.")
+
 
